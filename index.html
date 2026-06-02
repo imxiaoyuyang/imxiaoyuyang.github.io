@@ -161,7 +161,6 @@
 
     .quick-link, .nav a, .theme-toggle {
       border: 1px solid var(--border);
-      border-radius: var(--radius);
       background: var(--surface);
       color: var(--text);
       transition: transform .16s ease, border-color .16s ease, background .16s ease;
@@ -172,6 +171,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      border-radius: var(--radius);
       padding: 11px 12px;
       font-size: 14px;
       font-weight: 800;
@@ -189,8 +189,8 @@
     }
 
     .nav a {
-      display: flex;
-      justify-content: space-between;
+      display: block;
+      border-radius: var(--radius);
       padding: 10px 12px;
       color: var(--muted);
       font-size: 14px;
@@ -205,14 +205,19 @@
     }
 
     .theme-toggle {
-      width: 100%;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
       cursor: pointer;
-      padding: 10px 12px;
+      padding: 0;
       color: var(--muted);
       font: inherit;
-      font-size: 14px;
-      font-weight: 800;
-      text-align: left;
+      font-size: 20px;
+      font-weight: 850;
+      line-height: 1;
+      text-align: center;
     }
 
     main {
@@ -231,6 +236,13 @@
       min-height: 390px;
       display: grid;
       align-content: end;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      font-size: clamp(36px, 5.4vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
     }
 
     .hero p {
@@ -477,19 +489,19 @@
       </div>
 
       <nav class="nav" aria-label="Page navigation">
-        <a href="#about">About <span aria-hidden="true">01</span></a>
-        <a href="#education">Education <span aria-hidden="true">02</span></a>
-        <a href="#research">Research <span aria-hidden="true">03</span></a>
-        <a href="#publications">Publications <span aria-hidden="true">04</span></a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
       </nav>
 
-      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">Theme: <span id="themeLabel">Auto</span></button>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme"><span id="themeLabel" aria-hidden="true">○</span></button>
     </aside>
 
     <main id="content">
       <article class="hero" aria-labelledby="page-title">
         <p class="eyebrow">HCI · Human-centered AI · Social Computing</p>
-        <h1 id="page-title">Building inclusive and equitable socio-technical systems.</h1>
+        <h1 id="page-title">Building inclusive and equitable sociotechnical systems.</h1>
         <p>Hello, this is Xiaoyu YANG (杨小羽), or you can call me Derick. I work at the intersections of human-computer interaction, information policy, and social computing.</p>
       </article>
 
@@ -505,18 +517,18 @@
         <ul class="list">
           <li class="record">
             <div class="record-title">Michigan State University, Information and Media</div>
-            <div class="record-meta">PhD student</div>
+            <div class="record-meta">August 2026-present · PhD student</div>
           </li>
           <li class="record">
             <div class="record-title">The Hong Kong University of Science and Technology, Information Hub</div>
             <div class="record-meta">September 2024-July 2026 · MPhil in Computational Media and Arts</div>
           </li>
           <li class="record">
-            <div class="record-title"><a href="https://sais.jhu.edu/hopkins-nanjing-center">The John Hopkins University, SAIS Hopkins Nanjing Center</a></div>
+            <div class="record-title">The John Hopkins University, SAIS Hopkins Nanjing Center</div>
             <div class="record-meta">September 2023-June 2024 · Certificate in Chinese and American studies</div>
           </li>
           <li class="record">
-            <div class="record-title"><a href="https://www.nju.edu.cn/en/">Nanjing University</a>, Social Science Experimental Class, Law School</div>
+            <div class="record-title">Nanjing University, Social Science Experimental Class, Law School</div>
             <div class="record-meta">September 2019-June 2023 · Bachelor of Laws (LL.B.)</div>
           </li>
         </ul>
@@ -561,7 +573,6 @@
 
       <section id="publications" aria-labelledby="publications-title">
         <h2 id="publications-title">Publications</h2>
-        <p class="lead">This section is generated from my Google Scholar profile and refreshes through a scheduled GitHub Actions workflow.</p>
         <div class="publication-actions">
           <a class="scholar-link" href="https://scholar.google.com/citations?user=3WzH5ewAAAAJ&hl=en">View Google Scholar</a>
         </div>
@@ -596,7 +607,7 @@
 
     function setTheme(theme, persist = true) {
       root.dataset.theme = theme;
-      label.textContent = theme === "dark" ? "Dark" : "Light";
+      label.textContent = theme === "dark" ? "☾" : "☼";
       if (persist) localStorage.setItem("theme", theme);
     }
 
