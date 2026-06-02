@@ -159,7 +159,7 @@
       gap: 10px;
     }
 
-    .quick-link, .nav a, .theme-toggle {
+    .quick-link, .theme-toggle {
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
@@ -184,23 +184,39 @@
 
     .nav {
       display: grid;
-      gap: 8px;
+      gap: 2px;
       margin-top: auto;
+      border-left: 1px solid var(--border);
+      padding-left: 12px;
     }
 
     .nav a {
-      display: block;
-      border-radius: var(--radius);
-      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      min-height: 30px;
+      border-radius: 0;
+      padding: 4px 0 4px 12px;
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 750;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color .16s ease, transform .16s ease, border-color .16s ease;
+      border-left: 2px solid transparent;
+      margin-left: -14px;
     }
 
-    .quick-link:hover, .nav a:hover, .theme-toggle:hover {
+    .quick-link:hover, .theme-toggle:hover {
       transform: translateY(-1px);
       border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
       background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      transform: translateX(2px);
       text-decoration: none;
     }
 
@@ -218,6 +234,23 @@
       font-weight: 850;
       line-height: 1;
       text-align: center;
+    }
+
+    .theme-icon {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .theme-icon svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
     }
 
     main {
@@ -439,7 +472,15 @@
 
       .nav {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-left: 0;
+        padding-left: 0;
         margin-top: 0;
+      }
+
+      .nav a {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 0;
       }
 
       .focus-grid {
@@ -492,10 +533,12 @@
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#research">Research</a>
+        <a href="#services">Services</a>
         <a href="#publications">Publications</a>
+        <a href="#competitions">Competition Experience</a>
       </nav>
 
-      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme"><span id="themeLabel" aria-hidden="true">○</span></button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme"><span class="theme-icon" id="themeIcon" aria-hidden="true"></span></button>
     </aside>
 
     <main id="content">
@@ -601,13 +644,16 @@
   <script>
     const root = document.documentElement;
     const button = document.querySelector(".theme-toggle");
-    const label = document.getElementById("themeLabel");
+    const icon = document.getElementById("themeIcon");
     const saved = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const sunIcon = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>';
+    const moonIcon = '<svg viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"></path></svg>';
 
     function setTheme(theme, persist = true) {
       root.dataset.theme = theme;
-      label.textContent = theme === "dark" ? "☾" : "☼";
+      icon.innerHTML = theme === "dark" ? moonIcon : sunIcon;
+      button.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
       if (persist) localStorage.setItem("theme", theme);
     }
 
