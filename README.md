@@ -1,4 +1,4 @@
-# derick621.github.io
+# imxiaoyuyang.github.io
 
 Personal website for Xiaoyu YANG (Derick), migrated from `https://derickyang.notion.site`.
 
