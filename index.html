@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Derick Yang - Personal Website</title>
-  <meta name="description" content="Xiaoyu Yang (Derick), Phd student in Information and Media at Michigan State University, researching HCI, human-centered AI, social computing, law, policy, and design.">
+  <meta name="description" content="Xiaoyu Yang (Derick), PhD student in Information and Media at Michigan State University, researching HCI, human-centered AI, social computing, law, policy, and design.">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -338,6 +338,32 @@
       color: var(--muted);
     }
 
+    .publication-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .scholar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .scholar-link:hover {
+      border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -432,7 +458,7 @@
         <div class="identity-mark" aria-hidden="true">DY</div>
         <p class="eyebrow">Derick's Website</p>
         <h1>Derick Yang</h1>
-        <p class="tagline">Xiaoyu YANG (杨小羽), MPhil student in Computational Media and Arts at HKUST(GZ).</p>
+        <p class="tagline">Xiaoyu YANG (杨小羽), PhD student in Information and Media at Michigan State University.</p>
       </div>
 
       <div class="quick-links" aria-label="Primary links">
@@ -454,7 +480,7 @@
         <a href="#about">About <span aria-hidden="true">01</span></a>
         <a href="#education">Education <span aria-hidden="true">02</span></a>
         <a href="#research">Research <span aria-hidden="true">03</span></a>
-        <a href="#projects">Projects <span aria-hidden="true">04</span></a>
+        <a href="#publications">Publications <span aria-hidden="true">04</span></a>
       </nav>
 
       <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">Theme: <span id="themeLabel">Auto</span></button>
@@ -464,7 +490,7 @@
       <article class="hero" aria-labelledby="page-title">
         <p class="eyebrow">HCI · Human-centered AI · Social Computing</p>
         <h1 id="page-title">Building inclusive and equitable socio-technical systems.</h1>
-        <p>Hello, this is Xiaoyu YANG (杨小羽), or you can call me Derick. I work at the intersections of human-computer interaction,information policy and social computing.</p>
+        <p>Hello, this is Xiaoyu YANG (杨小羽), or you can call me Derick. I work at the intersections of human-computer interaction, information policy, and social computing.</p>
       </article>
 
       <section id="about" aria-labelledby="about-title">
@@ -477,6 +503,10 @@
       <section id="education" aria-labelledby="education-title">
         <h2 id="education-title">Education Background</h2>
         <ul class="list">
+          <li class="record">
+            <div class="record-title">Michigan State University, Information and Media</div>
+            <div class="record-meta">PhD student</div>
+          </li>
           <li class="record">
             <div class="record-title">The Hong Kong University of Science and Technology, Information Hub</div>
             <div class="record-meta">September 2024-July 2026 · MPhil in Computational Media and Arts</div>
@@ -492,7 +522,7 @@
         </ul>
       </section>
 
-      <section id="research " aria-labelledby="research-title">
+      <section id="research" aria-labelledby="research-title">
         <h2 id="research-title">Research Interests</h2>
         <p class="lead">My research journey started from legal studies and fieldwork on social justice issues. Over time, I became increasingly interested in how digital technologies mediate human behavior, access, and agency.</p>
         <div class="focus-grid" style="margin-top: 18px;">
@@ -529,61 +559,18 @@
         </div>
       </section>
 
-      <section id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title">Research</h2>
-        <div class="project-grid">
+      <section id="publications" aria-labelledby="publications-title">
+        <h2 id="publications-title">Publications</h2>
+        <p class="lead">This section is generated from my Google Scholar profile and refreshes through a scheduled GitHub Actions workflow.</p>
+        <div class="publication-actions">
+          <a class="scholar-link" href="https://scholar.google.com/citations?user=3WzH5ewAAAAJ&hl=en">View Google Scholar</a>
+        </div>
+        <div class="project-grid" id="publicationList" style="margin-top: 18px;">
           <article class="project">
             <div>
-              <h3><a href="https://derickyang.notion.site/ICWSM26-Opinions-on-Douyin-Tiktok-2cd46c1c38e58182a928ff7c199cd8eb?pvs=25">ICWSM26-Opinions on Douyin &amp; Tiktok</a></h3>
-              <p>Social Computing</p>
+              <h3>Loading publications...</h3>
+              <p>If the list does not load, use the Google Scholar link above.</p>
             </div>
-            <span class="badge accepted">Accepted</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/AAAI26-LLM-in-Legal-Context-2cd46c1c38e5812b929deb1707e2d02b?pvs=25">AAAI26-LLM in Legal Context</a></h3>
-              <p>LLM testing</p>
-            </div>
-            <span class="badge accepted">Accepted</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/CHI26-AI-side-hustles-2cd46c1c38e580c5bff9f57d86bb95a4?pvs=25">CHI26-AI side hustles</a></h3>
-              <p>Platform Narratives</p>
-            </div>
-            <span class="badge accepted">Accepted</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/DIS26-GSAN-Rethinking-Audio-Navigation-Beyond-Time-2ed46c1c38e58059b5abd6535a68e963?pvs=25">DIS26-GSAN: Rethinking Audio Navigation Beyond Time</a></h3>
-            </div>
-            <span class="badge accepted">Accepted</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/Poetic-VR-for-intercultural-learning-2cd46c1c38e581e2a67ddeefd2a32de5?pvs=25">Poetic VR for intercultural learning</a></h3>
-              <p>Improve empathy level by VR</p>
-            </div>
-            <span class="badge ongoing">Ongoing</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/Exploring-Stakeholders-Perceptions-of-XR-in-School-Bullying-Intervention-2cd46c1c38e581ff81dcf3fdff780b5f?pvs=25">Exploring Stakeholders' Perceptions of XR in School Bullying Intervention</a></h3>
-              <p>Serious Game</p>
-            </div>
-            <span class="badge ongoing">Ongoing</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/PresentCoach-Agents-2cd46c1c38e580859570c60a5ee0c973?pvs=25">PresentCoach Agents</a></h3>
-            </div>
-            <span class="badge ongoing">Ongoing</span>
-          </article>
-          <article class="project">
-            <div>
-              <h3><a href="https://derickyang.notion.site/Book-Computational-Studies-of-Chinese-Platforms-2cd46c1c38e58113bd8bf7ee869691c5?pvs=25">Book-Computational Studies of Chinese Platforms</a></h3>
-            </div>
-            <span class="badge ongoing">Ongoing</span>
           </article>
         </div>
       </section>
@@ -618,6 +605,44 @@
     button.addEventListener("click", () => {
       setTheme(root.dataset.theme === "dark" ? "light" : "dark");
     });
+
+    const publicationList = document.getElementById("publicationList");
+
+    function renderPublications(items) {
+      if (!publicationList) return;
+      if (!items.length) {
+        publicationList.innerHTML = `
+          <article class="project">
+            <div>
+              <h3>No publications found</h3>
+              <p>Please use the Google Scholar link above.</p>
+            </div>
+          </article>
+        `;
+        return;
+      }
+
+      publicationList.innerHTML = items.map((item) => {
+        const title = item.title || "Untitled publication";
+        const href = item.url || "https://scholar.google.com/citations?user=3WzH5ewAAAAJ&hl=en";
+        const meta = [item.authors, item.venue, item.year].filter(Boolean).join(" · ");
+        const citations = item.citations ? `${item.citations} citations` : "Scholar";
+        return `
+          <article class="project">
+            <div>
+              <h3><a href="${href}">${title}</a></h3>
+              <p>${meta}</p>
+            </div>
+            <span class="badge accepted">${citations}</span>
+          </article>
+        `;
+      }).join("");
+    }
+
+    fetch("publications.json", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("No publications data")))
+      .then((data) => renderPublications(data.publications || []))
+      .catch(() => renderPublications([]));
   </script>
 </body>
 </html>

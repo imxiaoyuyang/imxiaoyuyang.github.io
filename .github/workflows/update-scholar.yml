@@ -1,0 +1,25 @@
+name: Update Google Scholar publications
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "16 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-scholar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Fetch Google Scholar publications
+        run: python scripts/update_scholar.py
+      - name: Commit updated publications
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update Google Scholar publications"
+          file_pattern: publications.json
