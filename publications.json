@@ -1,14 +1,22 @@
 {
   "source": "https://scholar.google.com/citations?user=3WzH5ewAAAAJ&hl=en",
-  "updated_at": "2026-06-15T09:35:41Z",
+  "updated_at": "2026-07-01T07:20:07Z",
   "publications": [
     {
       "title": "PresentCoach: Dual-Agent Presentation Coaching through Exemplars and Interactive Feedback",
       "authors": "S Chen, J Zhou, X Xu, X Yang, L Guo, YC Chen",
       "venue": "arXiv preprint arXiv:2511.15253 , 2025",
       "year": "2025",
-      "citations": "2",
+      "citations": "4",
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3WzH5ewAAAAJ&citation_for_view=3WzH5ewAAAAJ:UeHWp8X0CEIC"
+    },
+    {
+      "title": "G-SAN: Rethinking Audio Navigation Beyond Time in Podcasts",
+      "authors": "L Zhao, X Yang, W Chen, P Hui",
+      "venue": "Proceedings of the 2026 Designing Interactive Systems Conference, 3430-3447 , 2026",
+      "year": "2026",
+      "citations": "1",
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3WzH5ewAAAAJ&citation_for_view=3WzH5ewAAAAJ:zYLM7Y9cAGgC"
     },
     {
       "title": "Hidden Labor behind the Hype: Understanding AI Side Hustles through Platform Narratives and Worker Practices",
